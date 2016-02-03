@@ -74,7 +74,10 @@ setup(
     author_email=author_email,
     packages=get_packages(package),
     package_data=get_package_data(package),
-    install_requires=[],
+    install_requires=[
+        'django>=1.7,<2.0',
+        'django-rest-framework>=3.0,<3.4',
+    ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Environment :: Web Environment',
