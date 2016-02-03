@@ -3,7 +3,6 @@ language: python
 sudo: false
 
 python:
-  - "3.2"
   - "3.3"
   - "3.4"
 
@@ -12,6 +11,3 @@ install:
 
 script:
     - tox
-
-install: pip install tox-travis
-script: tox
