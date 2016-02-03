@@ -5,7 +5,7 @@ PBF File Size Extent Estimation
 
 Install via pip:
 ```bash
-pip install geometalab.osm-pbf-file-size-estimation-service
+pip install geometalab.osm-pbf-file-size-estimation-service >= 0.0.5
 ```
 or add to your requirements-file:
 `geometalab.osm-pbf-file-size-estimation-service`
@@ -17,9 +17,10 @@ Example:
 
 ```python
 # urls.py
+from pbf_file_size_estimation.views import SizeEstimationView
 # ...
 router = DefaultRouter()
-router.register(r'estimate_size_in_bytes', pbf_file_size_estimation.views.SizeEstimationView, base_name='estimate_size_in_bytes')
+router.register(r'estimate_size_in_bytes', SizeEstimationView, base_name='estimate_size_in_bytes')
 # ...
 urlpatterns = [
     url(r'^', include(router.urls)),
