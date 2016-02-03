@@ -2,12 +2,37 @@ language: python
 
 sudo: false
 
-python:
-  - "3.3"
-  - "3.4"
+install:
+  - pip install tox
+
+env:
+    - TOX_ENV=py34-flake8
+    - TOX_ENV=py34-docs
+    - TOX_ENV=py34-django1.9-drf3.1
+    - TOX_ENV=py34-django1.9-drf3.2
+    - TOX_ENV=py34-django1.9-drf3.3
+    - TOX_ENV=py34-django1.7-drf3.0
+    - TOX_ENV=py34-django1.7-drf3.1
+    - TOX_ENV=py34-django1.7-drf3.2
+    - TOX_ENV=py34-django1.7-drf3.3
+    - TOX_ENV=py34-django1.8-drf3.0
+    - TOX_ENV=py34-django1.8-drf3.1
+    - TOX_ENV=py34-django1.8-drf3.2
+    - TOX_ENV=py34-django1.8-drf3.3
+    - TOX_ENV=py33-django1.7-drf3.0
+    - TOX_ENV=py33-django1.7-drf3.1
+    - TOX_ENV=py33-django1.7-drf3.2
+    - TOX_ENV=py33-django1.7-drf3.3
+    - TOX_ENV=py33-django1.8-drf3.0
+    - TOX_ENV=py33-django1.8-drf3.1
+    - TOX_ENV=py33-django1.8-drf3.2
+    - TOX_ENV=py33-django1.8-drf3.3
+
+matrix:
+  fast_finish: true
 
 install:
-  - pip install tox-travis
+  - pip install tox
 
 script:
-    - tox
+    - tox -c tox_travis.ini -e $TOX_ENV
