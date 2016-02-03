@@ -13,6 +13,7 @@ url = 'https://github.com/geometalab/osm-pbf-file-size-estimation-service'
 author = 'Geometalab'
 author_email = 'geometalab@hsr.ch'
 license = 'MIT'
+package_data_files = ['planet-stats.csv']
 
 
 def get_version(package):
@@ -46,6 +47,7 @@ def get_package_data(package):
     for base, filenames in walk:
         filepaths.extend([os.path.join(base, filename)
                           for filename in filenames])
+    filepaths.extend(package_data_files)
     return {package: filepaths}
 
 
