@@ -1,0 +1,4 @@
+site_name: geometalab.osm-pbf-file-size-estimation-service
+site_description: Rough estimate for a certain extent for pbf file size.
+repo_url: https://github.com/geometalab/osm-pbf-file-size-estimation-service
+site_dir: html

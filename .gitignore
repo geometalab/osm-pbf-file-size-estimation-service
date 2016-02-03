@@ -7,21 +7,18 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.Python
 env/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
-.eggs/
 lib/
 lib64/
 parts/
 sdist/
 var/
 *.egg-info/
-.installed.cfg
 *.egg
 
 # PyInstaller
@@ -36,14 +33,9 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
 nosetests.xml
 coverage.xml
-*,cover
-.hypothesis/
+*.cover
 
 # Translations
 *.mo
@@ -60,3 +52,18 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+*.db
+*~
+.*
+
+html/
+coverage/
+MANIFEST
+
+bin/
+include/
+local/
+
+!.gitignore
+!.travis.yml
