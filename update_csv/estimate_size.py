@@ -15,7 +15,7 @@ parser.add_argument("maxlat", help="maximum latitude of the bounding box",  type
 args = parser.parse_args()
 
 # read command line arguments
-f = open(args.inputfile, 'rb') # open the csv file
+f = open(args.inputfile, 'r')  # open the csv file
 minlonbbox = args.minlon
 minlatbbox = args.minlat
 maxlonbbox = args.maxlon
@@ -45,15 +45,15 @@ if maxlatbbox < -90 or maxlatbbox > 90:
     print('ERROR: maxlat out of range')
     sys.exit(2)
 
-size = {} # according to http://stackoverflow.com/a/6696418
+size = {}  # according to http://stackoverflow.com/a/6696418
 try:
-    reader = csv.reader(f) # create the reader object
-    for row in reader:     # iterate the rows of the file in orders
-        lat = str(row[0]) # cast to string in order to use as key in associative array
+    reader = csv.reader(f)  # create the reader object
+    for row in reader:      # iterate the rows of the file in orders
+        lat = str(row[0])   # cast to string in order to use as key in associative array
         lon = str(row[1])
         size[lat, lon] = int(row[2])
 finally:
-    f.close() # close the csv file
+    f.close()  # close the csv file
 
 
 # convert degrees to radians
