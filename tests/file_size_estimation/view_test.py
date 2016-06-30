@@ -10,7 +10,7 @@ class SizeEstimationViewTest(APITestCase):
     def test_size_estimation_returns_value(self):
         data = {"west": 1.0, "south": 2.0, "east": 3.0, "north": 4.0}
         expected_result = data.copy()
-        expected_result.update({"estimated_file_size_in_bytes": 1166})
+        expected_result.update({"estimated_file_size_in_bytes": 1163})
 
         response = self.client.post(self.url, data, format='json')
 
