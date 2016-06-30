@@ -4,7 +4,7 @@
 
 *Warning*: This uses a lot of CPU and RAM.
 
-Docker-compose is being used here, because of it's simplicity.
+Docker-compose is being used here, because of its simplicity.
 
 Go to folder `update_csv` and execute the docker-compose.
 This should result in a new file, called `planet-latest-stats.csv`.
@@ -22,7 +22,7 @@ cd ..
 
 ### `lsplitter.sh`
 
-This script will read an OSM planet file in .pbf format. The programm works in two steps:
+This script will read an OSM planet file in .pbf format. The program works in two steps:
 
 1. Cutting the input file in a series of "stripes", spaced by 1 degree, along meridians.
 2. Cutting the "stripes" in parallels to the equator therefore creating tiles with a size of 1 degree by 1 degree.
