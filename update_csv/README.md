@@ -9,15 +9,13 @@ Docker-compose is being used here, because of it's simplicity.
 Go to folder `update_csv` and execute the docker-compose.
 This should result in a new file, called `planet-latest-stats.csv`.
 
-Run and update tests, the resulting values should be higher than the already existing.
-
-Move this one to
-the `pbf_file_size_estimation/planet-stats.csv` and make a new release.
+Move this file to the `pbf_file_size_estimation/planet-stats.csv` and run the tests.
  
 ```bash
 docker-compose run update-csv
-
 mv planet-latest-stats.csv ../pbf_file_size_estimation/planet-stats.csv
+cd ..
+./runtests.py
 ```
 
 ## Explanation for scripts
