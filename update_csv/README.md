@@ -69,4 +69,5 @@ The size estimate is given in bytes.
 
 ### Requirements
 
-The scripts `lsplitter.sh` and `generate_stats.sh` require GNU parallel (https://www.gnu.org/software/parallel/) and a compiled version of osmconvert (http://wiki.openstreetmap.org/wiki/Osmconvert). To avoid the need of having these tools installed by an administrator with root privileges, one can compile them locally (osmconvert) or just copy the Perl file (GNU parallel) in the same directory as the other scripts. The aforementioned scripts are programmed in such a way that they will use these local versions (by calling e.g. `./parallel` instead of `parallel`).
+The requirements to run the scripts can be found in the `Dockerfile`, if anyone should be interested in
+running this outside of docker.
