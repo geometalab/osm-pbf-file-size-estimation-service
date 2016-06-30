@@ -6,19 +6,30 @@ install:
   - pip install tox
 
 env:
-    - TOX_ENV=py34-flake8
-    - TOX_ENV=py34-docs
+    - TOX_ENV=py35-flake8
+    - TOX_ENV=py35-docs
+    - TOX_ENV=py35-django1.9-drf3.1
+    - TOX_ENV=py35-django1.9-drf3.2
+    - TOX_ENV=py35-django1.9-drf3.3
+    - TOX_ENV=py35-django1.8-drf3.0
+    - TOX_ENV=py35-django1.8-drf3.1
+    - TOX_ENV=py35-django1.8-drf3.2
+    - TOX_ENV=py35-django1.8-drf3.3
+    - TOX_ENV=py35-django1.7-drf3.0
+    - TOX_ENV=py35-django1.7-drf3.1
+    - TOX_ENV=py35-django1.7-drf3.2
+    - TOX_ENV=py35-django1.7-drf3.3
     - TOX_ENV=py34-django1.9-drf3.1
     - TOX_ENV=py34-django1.9-drf3.2
     - TOX_ENV=py34-django1.9-drf3.3
-    - TOX_ENV=py34-django1.7-drf3.0
-    - TOX_ENV=py34-django1.7-drf3.1
-    - TOX_ENV=py34-django1.7-drf3.2
-    - TOX_ENV=py34-django1.7-drf3.3
     - TOX_ENV=py34-django1.8-drf3.0
     - TOX_ENV=py34-django1.8-drf3.1
     - TOX_ENV=py34-django1.8-drf3.2
     - TOX_ENV=py34-django1.8-drf3.3
+    - TOX_ENV=py34-django1.7-drf3.0
+    - TOX_ENV=py34-django1.7-drf3.1
+    - TOX_ENV=py34-django1.7-drf3.2
+    - TOX_ENV=py34-django1.7-drf3.3
     - TOX_ENV=py33-django1.7-drf3.0
     - TOX_ENV=py33-django1.7-drf3.1
     - TOX_ENV=py33-django1.7-drf3.2
