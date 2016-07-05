@@ -1,11 +1,11 @@
 from django.test import TestCase
 
-from pbf_file_size_estimation.app_settings import PBF_FILE_SIZE_ESTIMATION_CVS_FILE_PATH
+from pbf_file_size_estimation.app_settings import PBF_FILE_SIZE_ESTIMATION_CSV_FILE_PATH
 from pbf_file_size_estimation.estimate_size import estimate_size_of_extent, OutOfBoundsError
 
 
 class EstimateSizeTest(TestCase):
-    csv_file_name = PBF_FILE_SIZE_ESTIMATION_CVS_FILE_PATH
+    csv_file_name = PBF_FILE_SIZE_ESTIMATION_CSV_FILE_PATH
 
     def test_monaco_size_estimation(self):
         monaco_bbox = [7.400, 43.717, 7.439, 43.746]
