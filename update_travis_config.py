@@ -22,16 +22,13 @@ cache: pip
 sudo: false
 
 install:
-  - pip install tox
+  - pip install tox-travis
 
 env:
 {}
 
 matrix:
   fast_finish: true
-
-install:
-  - pip install tox
 
 script:
     - tox -e $TOX_ENV"""
