@@ -43,11 +43,6 @@ pip-tools is a prerequisite: `pip install pip-tools`.
 
 To update the requirements: `pip-compile -U requirements.txt`.
 
-## updating tox
-
-Just update tox as you normally would, the run `python update_travis_config.py` 
-to reflect the changes for travis and commit both files.
-
 ## running tests
 
 An easy way is to use [pyenv](https://github.com/yyuu/pyenv).
