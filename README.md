@@ -34,3 +34,11 @@ Then the estimation service is reachable at `/estimate_size_in_bytes/` and rever
 `master` [![Build Status](https://travis-ci.org/geometalab/osm-pbf-file-size-estimation-service.svg?branch=master)](https://travis-ci.org/geometalab/osm-pbf-file-size-estimation-service)
 
 `develop` [![Build Status](https://travis-ci.org/geometalab/osm-pbf-file-size-estimation-service.svg?branch=develop)](https://travis-ci.org/geometalab/osm-pbf-file-size-estimation-service)
+
+# development
+
+## updating requirements
+
+pip-tools is a prerequisite: `pip install pip-tools`.
+
+To update the requirements: `pip-compile -U requirements.txt`.
