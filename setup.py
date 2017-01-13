@@ -27,7 +27,7 @@ def get_version(package):
 
 def get_packages(package):
     """
-    Return root package and all sub-packages.
+    Return root package and all sub-packages.develop
     """
     return [dirpath
             for dirpath, dirnames, filenames in os.walk(package)
@@ -77,8 +77,8 @@ setup(
     packages=get_packages(package),
     package_data=get_package_data(package),
     install_requires=[
-        'django>=1.7,<2.0',
-        'djangorestframework>=3.0,<3.4',
+        'django>=1.8,<1.11',
+        'djangorestframework>=3.0,<3.6',
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
