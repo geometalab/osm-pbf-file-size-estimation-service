@@ -16,6 +16,13 @@ cache: pip
 
 sudo: false
 
+addons:
+  apt:
+    sources:
+      - deadsnakes
+    packages:
+      - python3.5
+
 install:
   - pip install tox
 

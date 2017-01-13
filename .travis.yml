@@ -6,6 +6,16 @@ cache: pip
 
 sudo: false
 
+addons:
+  apt:
+    sources:
+      - deadsnakes
+    packages:
+      - python3.5
+
+install:
+  - pip install tox
+
 env:
  - TOX_ENV=py35-flake8
  - TOX_ENV=py35-docs
