@@ -10,12 +10,13 @@ class SizeEstimationViewTest(APITestCase):
     def test_size_estimation_returns_value(self):
         data = {"west": 1.0, "south": 2.0, "east": 3.0, "north": 4.0}
         expected_result = data.copy()
-        expected_result.update({"estimated_file_size_in_bytes": 1163})
+        expected_result.update({"estimated_file_size_in_bytes": 1178})
 
         response = self.client.post(self.url, data, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, expected_result)
+        self.assertEqual(response.data['estimated_file_size_in_bytes'], expected_result['estimated_file_size_in_bytes'])
+        self.assertDictEqual(response.data, expected_result)
 
     def test_size_estimation_returns_400_and_error_if_invalid_data_is_passed(self):
         data = {"west": 1.0, "south": 2.0, "east": 3.0, "north": -1.0}

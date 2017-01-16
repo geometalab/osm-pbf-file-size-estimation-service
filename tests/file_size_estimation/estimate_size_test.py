@@ -9,7 +9,7 @@ class EstimateSizeTest(TestCase):
 
     def test_monaco_size_estimation(self):
         monaco_bbox = [7.400, 43.717, 7.439, 43.746]
-        self.assertEqual(estimate_size_of_extent(self.csv_file_name, *monaco_bbox), 36799)
+        self.assertEqual(estimate_size_of_extent(self.csv_file_name, *monaco_bbox), 37284)
 
     def test_dateline_overlap_should_work(self):
         dateline_bbox = [160, 43.717, -160, 43.746]

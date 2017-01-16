@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import re
 import os
+import subprocess
 import sys
 from setuptools import setup
 
@@ -55,11 +56,24 @@ version = get_version(package)
 
 
 if sys.argv[-1] == 'publish':
-    if os.system("pip freeze | grep wheel"):
+    if os.system("pip freeze --all | grep wheel"):
         print("wheel not installed.\nUse `pip install wheel`.\nExiting.")
         sys.exit()
-    os.system("python setup.py sdist upload")
-    os.system("python setup.py bdist_wheel upload")
+    if os.system("pip freeze --all | grep twine"):
+        print("twine not installed.\nUse `pip install twine`.\nExiting.")
+        sys.exit()
+
+    if os.path.exists("dist/"):
+        os.system("mv dist dist.bak")
+
+    os.system("python setup.py sdist bdist_wheel")
+    subprocess.check_call("twine upload dist/*".split(' '))
+
+    if os.path.exists("dist.bak/"):
+        os.system("mv dist/* dist.bak/")
+        os.system("rmdir dist")
+        os.system("mv dist.bak dist")
+
     print("You probably want to also tag the version now:")
     print("  git tag -a {0} -m 'version {0}'".format(version))
     print("  git push --tags")
@@ -77,8 +91,8 @@ setup(
     packages=get_packages(package),
     package_data=get_package_data(package),
     install_requires=[
-        'django>=1.7,<2.0',
-        'djangorestframework>=3.0,<3.4',
+        'django>=1.8,<1.11',
+        'djangorestframework>=3.0,<3.6',
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
