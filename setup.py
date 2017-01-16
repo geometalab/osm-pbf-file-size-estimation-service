@@ -27,7 +27,7 @@ def get_version(package):
 
 def get_packages(package):
     """
-    Return root package and all sub-packages.develop
+    Return root package and all sub-packages.
     """
     return [dirpath
             for dirpath, dirnames, filenames in os.walk(package)
