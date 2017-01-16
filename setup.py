@@ -62,8 +62,18 @@ if sys.argv[-1] == 'publish':
     if os.system("pip freeze --all | grep twine"):
         print("twine not installed.\nUse `pip install twine`.\nExiting.")
         sys.exit()
+
+    if os.path.exists("dist/"):
+        os.system("mv dist dist.bak")
+
     os.system("python setup.py sdist bdist_wheel")
     subprocess.check_call("twine upload dist/*".split(' '))
+
+    if os.path.exists("dist.bak/"):
+        os.system("mv dist/* dist.bak/")
+        os.system("rmdir dist")
+        os.system("mv dist.bak dist")
+
     print("You probably want to also tag the version now:")
     print("  git tag -a {0} -m 'version {0}'".format(version))
     print("  git push --tags")
