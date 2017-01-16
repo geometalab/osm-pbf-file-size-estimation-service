@@ -47,7 +47,7 @@ To update the requirements: `pip-compile -U requirements.txt`.
 
 An easy way is to use [pyenv](https://github.com/yyuu/pyenv).
 
-Install all versions, add them locally, install tox tox-pyenv and run tox:
+Install all versions, add them locally, install `tox` and `tox-pyenv` and run `tox`:
 
 ```
 pyenv install 3.3.6
