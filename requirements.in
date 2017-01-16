@@ -9,6 +9,7 @@ flake8
 
 # wheel for PyPI installs
 wheel
+twine # for uploading to PyPI
 
 # MkDocs for documentation previews/deploys
 mkdocs

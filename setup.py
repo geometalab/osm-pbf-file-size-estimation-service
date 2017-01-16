@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import re
 import os
+import subprocess
 import sys
 from setuptools import setup
 
@@ -58,8 +59,8 @@ if sys.argv[-1] == 'publish':
     if os.system("pip freeze | grep wheel"):
         print("wheel not installed.\nUse `pip install wheel`.\nExiting.")
         sys.exit()
-    os.system("python setup.py sdist upload")
-    os.system("python setup.py bdist_wheel upload")
+    os.system("python setup.py sdist bdist_wheel")
+    subprocess.check_call("twine upload dist/*".split(' '))
     print("You probably want to also tag the version now:")
     print("  git tag -a {0} -m 'version {0}'".format(version))
     print("  git push --tags")
