@@ -7,9 +7,9 @@ pytest
 pytest-cov
 flake8
 
-# wheel for PyPI installs
+# PyPI
 wheel
-twine # for uploading to PyPI
+twine
 
 # MkDocs for documentation previews/deploys
 mkdocs
