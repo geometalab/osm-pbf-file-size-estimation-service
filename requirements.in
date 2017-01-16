@@ -1,5 +1,4 @@
-Django
-djangorestframework
+-e .
 
 # Test requirements
 pytest-django
