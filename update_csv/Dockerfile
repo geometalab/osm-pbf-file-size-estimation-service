@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 
 MAINTAINER Geometalab HSR <geometalab@hsr.ch>
 

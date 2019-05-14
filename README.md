@@ -5,10 +5,10 @@ PBF File Size Extent Estimation
 
 Install via pip:
 ```bash
-pip install "geometalab.osm-pbf-file-size-estimation-service>=1.1.0"
+pip install "geometalab.osm-pbf-file-size-estimation-service~=2.0.0"
 ```
 or add to your requirements-file:
-`geometalab.osm-pbf-file-size-estimation-service`
+`geometalab.osm-pbf-file-size-estimation-service~=2.0.0`
 
 In your django project, add `pbf_file_size_estimation` to your `INSTALLED_APPS` settings and register the
 routers in your `urls.py`.
@@ -45,16 +45,8 @@ To update the requirements: `pip-compile -U requirements.txt`.
 
 ## running tests
 
-An easy way is to use [pyenv](https://github.com/yyuu/pyenv).
+If you have installed docker locally, testing is as easy as running:
 
-Install all versions, add them locally, install `tox` and `tox-pyenv` and run `tox`:
-
-```
-pyenv install 3.3.6
-pyenv install 3.4.5
-pyenv install 3.5.2
-pyenv install 3.6.0
-# depending on your setup, you may need to use `sudo pip install tox tox-pyenv` 
-pip install tox tox-pyenv
-tox
+```bash
+./tox_run.sh
 ```

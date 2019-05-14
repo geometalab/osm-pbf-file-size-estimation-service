@@ -91,8 +91,8 @@ setup(
     packages=get_packages(package),
     package_data=get_package_data(package),
     install_requires=[
-        'django>=1.8,<1.11',
-        'djangorestframework>=3.0,<3.6',
+        'django>=1.11,<2.0',
+        'djangorestframework>=3.8,<4',
     ],
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
@@ -103,9 +103,8 @@ setup(
         'Operating System :: OS Independent',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Internet :: WWW/HTTP',
     ]
 )

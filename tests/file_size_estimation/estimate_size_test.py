@@ -9,22 +9,20 @@ class EstimateSizeTest(TestCase):
 
     def test_monaco_size_estimation(self):
         monaco_bbox = [7.400, 43.717, 7.439, 43.746]
-        self.assertEqual(estimate_size_of_extent(self.csv_file_name, *monaco_bbox), 37284)
+        self.assertEqual(estimate_size_of_extent(self.csv_file_name, *monaco_bbox), 41110)
 
     def test_dateline_overlap_should_work(self):
         dateline_bbox = [160, 43.717, -160, 43.746]
-        self.assertEqual(estimate_size_of_extent(self.csv_file_name, *dateline_bbox), 236)
+        self.assertEqual(estimate_size_of_extent(self.csv_file_name, *dateline_bbox), 240)
 
     def test_dateline_overlap_should_equal_the_two_adjecent_bboxes(self):
         dateline_bbox = [160, 43.717, -160, 43.746]
         dateline_east_side_bbox = [160, 43.717, 180, 43.746]
         dateline_west_side_bbox = [-180, 43.717, -160, 43.746]
-
-        self.assertEqual(
-            estimate_size_of_extent(self.csv_file_name, *dateline_bbox),
-            estimate_size_of_extent(self.csv_file_name, *dateline_east_side_bbox) +
-            estimate_size_of_extent(self.csv_file_name, *dateline_west_side_bbox)
-        )
+        overlap = estimate_size_of_extent(self.csv_file_name, *dateline_bbox)
+        adjecent_1 = estimate_size_of_extent(self.csv_file_name, *dateline_east_side_bbox)
+        adjecent_2 = estimate_size_of_extent(self.csv_file_name, *dateline_west_side_bbox)
+        self.assertEqual(overlap, adjecent_1 + adjecent_2)
 
     def test_north_cant_be_greater_than_south(self):
         south_greater_than_north_bbox = [8, 44, 9, 43]
