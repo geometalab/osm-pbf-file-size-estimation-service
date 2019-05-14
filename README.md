@@ -5,10 +5,10 @@ PBF File Size Extent Estimation
 
 Install via pip:
 ```bash
-pip install "geometalab.osm-pbf-file-size-estimation-service>=1.1.0"
+pip install "geometalab.osm-pbf-file-size-estimation-service~=2.0.0"
 ```
 or add to your requirements-file:
-`geometalab.osm-pbf-file-size-estimation-service`
+`geometalab.osm-pbf-file-size-estimation-service~=2.0.0`
 
 In your django project, add `pbf_file_size_estimation` to your `INSTALLED_APPS` settings and register the
 routers in your `urls.py`.
