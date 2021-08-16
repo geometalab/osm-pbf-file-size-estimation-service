@@ -68,3 +68,4 @@ local/
 
 !.gitignore
 !.travis.yml
+!.dockerignore

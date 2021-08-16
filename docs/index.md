@@ -21,15 +21,15 @@ Rough estimate for a certain extent for pbf file size.
 
 ## Requirements
 
-* Python (2.7, 3.3, 3.4)
-* Django (1.6, 1.7)
+* Python (3.7, 3.8, 3.9)
+* Django (2, 3)
 
 ## Installation
 
 Install using `pip`...
 
 ```bash
-$ pip install geometalab.osm-pbf-file-size-estimation-service
+pip install geometalab.osm-pbf-file-size-estimation-service
 ```
 
 ## Example
@@ -41,38 +41,67 @@ TODO: Write example.
 Install testing requirements.
 
 ```bash
-$ pip install -r requirements.txt
+poetry install
 ```
 
 Run with runtests.
 
 ```bash
-$ ./runtests.py
+poetry run ./runtests.py
 ```
 
-You can also use the excellent [tox](http://tox.readthedocs.org/en/latest/) testing tool to run the tests against all supported versions of Python and Django. Install tox globally, and then simply run:
+You can also use the excellent [tox](http://tox.readthedocs.org/en/latest/) testing tool to run the tests against all supported versions of Python and Django. Install the python interpreters (3.7, 3.9), and then simply run:
 
 ```bash
-$ tox
+poetry run tox
+```
+
+Alternatively using docker:
+```bash
+./tox_run.sh
 ```
 
 ## Documentation
 
-To build the documentation, you'll need to install `mkdocs`.
+To build the documentation, you'll need to install the depenencies, using poetry:
 
 ```bash
-$ pip install mkdocs
+poetry install
 ```
 
 To preview the documentation:
 
 ```bash
-$ mkdocs serve
+poetry run mkdocs serve
 Running at: http://127.0.0.1:8000/
 ```
 
 To build the documentation:
 
 ```bash
-$ mkdocs build
+poetry run mkdocs build
+```
+
+## Publish/Build
+
+To publish a new release:
+
+* change the version in pyproject.toml
+
+then build:
+
+```bash
+poetry build
+```
+
+and publish:
+
+```bash
+poetry publish
+```
+
+and tag it:
+```bash
+git tag -a <version> -m "new release <version>"
+git push
 ```

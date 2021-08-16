@@ -5,10 +5,10 @@ PBF File Size Extent Estimation
 
 Install via pip:
 ```bash
-pip install "geometalab.osm-pbf-file-size-estimation-service~=2.0.0"
+pip install "geometalab.osm-pbf-file-size-estimation-service~=3.0.0"
 ```
 or add to your requirements-file:
-`geometalab.osm-pbf-file-size-estimation-service~=2.0.0`
+`geometalab.osm-pbf-file-size-estimation-service~=3.0.0`
 
 In your django project, add `pbf_file_size_estimation` to your `INSTALLED_APPS` settings and register the
 routers in your `urls.py`.
@@ -20,7 +20,7 @@ Example:
 from pbf_file_size_estimation.views import SizeEstimationView
 # ...
 router = DefaultRouter()
-router.register(r'estimate_size_in_bytes', SizeEstimationView, base_name='estimate_size_in_bytes')
+router.register(r'estimate_size_in_bytes', SizeEstimationView, basename='estimate_size_in_bytes')
 # ...
 urlpatterns = [
     url(r'^', include(router.urls)),
@@ -37,16 +37,4 @@ Then the estimation service is reachable at `/estimate_size_in_bytes/` and rever
 
 # development
 
-## updating requirements
-
-pip-tools is a prerequisite: `pip install pip-tools`.
-
-To update the requirements: `pip-compile -U requirements.txt`.
-
-## running tests
-
-If you have installed docker locally, testing is as easy as running:
-
-```bash
-./tox_run.sh
-```
+See [docs/](./docs/index.md).
