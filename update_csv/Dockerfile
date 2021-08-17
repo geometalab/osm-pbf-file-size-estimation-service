@@ -1,11 +1,13 @@
-FROM debian:buster
+FROM python:3
 
-MAINTAINER Geometalab HSR <geometalab@hsr.ch>
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get clean && apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update \
+    && apt-get install -y \
     wget \
     parallel \
-    osmctools
+    osmctools \
+    osmium-tool
 
 WORKDIR /home/py
 
