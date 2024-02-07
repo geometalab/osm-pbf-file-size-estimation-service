@@ -21,7 +21,7 @@ pytest-cov = "^2.12.1"
 flake8 = "^3.9.2"
 mkdocs = "^1.2.2"
 tox = "^3.24.1"
-Django = "^3.2.6"
+Django = "^3.2.24"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
